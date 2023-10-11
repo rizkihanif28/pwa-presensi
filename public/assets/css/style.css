@@ -1,0 +1,525 @@
+/**
+ * TABLE OF CONTENTS
+ *
+ * 1. Root
+ * 2. Login
+ * 3. Alert
+ * 4. Sidebar
+ * 4. 
+ * 4. 
+ * 4. 
+ * 4. 
+ * 4. 
+ * 4. 
+ * 	  3.1 Alert Custom CSS 
+ * 	  3.2 
+ * 	  3.3 List
+ * 	  3.4 Alert
+ * 	  3.5 Card
+ * 	  3.6 Table
+ * 	  3.7 Tooltip
+ * 	  3.8 Modal
+ * 	  3.9 Nav
+ * 	  3.10 Pagination
+ * 	  3.11 Badge
+ * 	  3.12 Button
+ * 	  3.13 Media
+ * 	  3.14 Breadcrumb
+ * 	  3.15 Accordion
+ * 	  3.16 Popover
+ * 	  3.17 Grid
+ * 	  3.18 Navbar
+ * 	  3.19 Dropdown
+ * 	  3.20 Tab
+ * 	  3.21 Progressbar
+ * 	  3.22 Jumbotron
+ * 	  3.23 Carousel
+ * 4. Theme Style
+ * 	  4.1 Misc
+ * 	  4.2 Section
+ * 	  4.3 Page
+ * 	  4.4 Layout
+ * 	  4.5 Animation
+ * 5. Responsive
+ *
+ */
+/* 1. Variable */
+/* 2. Mixin */
+/* 3. Bootstrap Override */
+/* 3.1 Misc */
+
+/* 1. Theme Style */
+/* 1.1 Misc */
+:root {
+    /* Colors */
+    --primary: #6777ef;
+    --secondary: #34395e;
+    --success: #47c363;
+    --info: #3abaf4;
+    --warning: #ffa426;
+    --danger: #fc544b;
+    --light: #e3eaef;
+    --dark: #191d21;
+}
+
+body,
+html {
+    min-height: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-weight: 200;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+    background: rgb(255, 255, 255);
+}
+
+/* Login */
+.login-brand {
+    margin-bottom: 5rem;
+    font-size: 6rem;
+    height: 40px;
+    color: #666;
+    text-align: center;
+    margin-top: 50px;
+}
+.card {
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card .card-header h4 {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.2rem;
+}
+
+.card .card-header,
+.card .card-body,
+.card .card-footer {
+    background-color: transparent;
+    font-weight: 400;
+}
+
+.card .card-header {
+    font-weight: 400;
+    border: none;
+    line-height: 30px;
+    -ms-grid-row-align: center;
+    align-self: center;
+    width: 100%;
+    display: inline;
+    align-items: center;
+}
+
+/* 3. Alert */
+
+/* Alert Custom CSS */
+/* .alert-dismissible .close {
+    padding: 0.75rem 0.25rem;
+} */
+
+.alert-dismissible .close {
+    color: #000000;
+    padding-right: 0.5rem;
+    margin-left: 70px;
+}
+
+.alert {
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    padding: 15px 10px;
+}
+.alert .alert-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.alert code {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 1px 4px;
+}
+.alert p {
+    margin-bottom: 0;
+}
+.alert.alert-has-icon {
+    display: flex;
+}
+.alert.alert-has-icon .alert-icon {
+    margin-top: 4px;
+    width: 30px;
+}
+.alert.alert-has-icon .alert-icon .ion,
+.alert.alert-has-icon .alert-icon .fas,
+.alert.alert-has-icon .alert-icon .far,
+.alert.alert-has-icon .alert-icon .fab,
+.alert.alert-has-icon .alert-icon .fal {
+    font-size: 20px;
+}
+.alert.alert-has-icon .alert-body {
+    flex: 1;
+}
+.alert:not(.alert-light) a {
+    color: #fff;
+}
+.alert.alert-primary {
+    background-color: #6777ef;
+}
+.alert.alert-secondary {
+    background-color: #cdd3d8;
+}
+.alert.alert-success {
+    background-color: #47c363;
+}
+.alert.alert-info {
+    background-color: #3abaf4;
+}
+.alert.alert-warning {
+    background-color: #ffa426;
+}
+.alert.alert-danger {
+    background-color: #fc544b;
+}
+.alert.alert-light {
+    background-color: #e3eaef;
+    color: #191d21;
+}
+.alert.alert-dark {
+    background-color: #191d21;
+}
+
+/* 4. Sidebar */
+/* .side-main {
+    height: 100vh;
+    position: fixed;
+    z-index: 880;
+    width: 200px;
+}
+
+.side-wrap {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body.layout-2 .main-content {
+    padding-top: 107px;
+    padding-left: 30px;
+    padding-right: 0;
+    width: calc(100% - 200px);
+}
+
+body.layout-3 .main-content {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 170px;
+}
+
+@media (max-width: 990px) {
+    .nav-wrap {
+        min-height: 100vh;
+    }
+    .content-section {
+        margin-left: 10px;
+    }
+    .content-title h1 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .side-main {
+        width: 100% !important;
+    }
+    .dropdown-menu {
+        margin: 5px -15px 0px 0px !important;
+        z-index: -880;
+    }
+}
+
+@media (min-width: 590px) {
+    .side-wrap {
+        height: 100%;
+    }
+    .main-content {
+        padding-left: 230px;
+        padding-right: 30px;
+        width: 100% !important;
+    }
+}
+
+.nav-main {
+    font-weight: 500;
+    font-size: 1rem;
+}
+.buttoncamp {
+    background-color: #ffffff !important;
+    border-radius: 100% !important;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 2px;
+} */
+
+/* appBottomMenu */
+.appBottomMenu {
+    min-height: 56px;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #e1e1e1;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.appBottomMenu.no-border {
+    border: 0 !important;
+    box-shadow: 0 !important;
+}
+
+.appBottomMenu.rounded {
+    border-radius: 24px 24px 0 0 !important;
+}
+
+.appBottomMenu.rounded .item:before {
+    display: none;
+}
+
+.appBottomMenu .item {
+    font-size: 12px;
+    letter-spacing: 0;
+    text-align: center;
+    width: 100%;
+    height: 56px;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.appBottomMenu .item:before {
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 0 0 10px 10px;
+    background: transparent;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 0;
+}
+
+.appBottomMenu .item .col {
+    width: 100%;
+    padding: 0 4px;
+    text-align: center;
+}
+
+.appBottomMenu a {
+    text-decoration: none;
+}
+
+.appBottomMenu .item .icon,
+.appBottomMenu .item .icon {
+    display: inline-flex;
+    margin: 1px auto 3px auto;
+    font-size: 26px;
+    line-height: 1em;
+    color: #141515;
+    transition: 0.1s all;
+    display: block;
+    margin-top: 1px;
+    margin-bottom: 3px;
+}
+
+.appBottomMenu .item .action-button {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    margin-left: -5px;
+    margin-right: -5px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 200px;
+    background: #1e74fd;
+}
+
+.appBottomMenu .item .action-button.large {
+    width: 60px;
+    height: 60px;
+    margin-top: -20px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.appBottomMenu .item .action-button i,
+.appBottomMenu .item .action-button i {
+    color: #fff !important;
+    margin: 0 !important;
+    line-height: 0 !important;
+}
+
+.appBottomMenu .item strong {
+    margin-top: 4px;
+    text-decoration: none;
+    display: block;
+    color: #141515;
+    font-weight: 400;
+    transition: 0.1s all;
+}
+
+.appBottomMenu .item:active {
+    opacity: 0.8;
+}
+
+.appBottomMenu .item.active:before {
+    background: transparent;
+}
+
+.appBottomMenu .item.active .icon,
+.appBottomMenu .item.active .icon,
+.appBottomMenu .item.active strong {
+    color: #1e74fd !important;
+    font-weight: 500;
+}
+
+.appBottomMenu .item .icon,
+.appBottomMenu .item .icon {
+    color: #141515;
+    font-size: 25px;
+}
+
+.appBottomMenu .item:hover .icon,
+.appBottomMenu .item:hover .icon,
+.appBottomMenu .item:hover strong {
+    color: #1e74fd;
+}
+
+.appBottomMenu.text-light {
+    color: #fff;
+}
+
+.appBottomMenu.text-light .item {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.appBottomMenu.text-light .item .icon,
+.appBottomMenu.text-light .item .icon,
+.appBottomMenu.text-light .item strong {
+    color: #fff;
+}
+
+.appBottomMenu.text-light .item.active {
+    opacity: 1;
+}
+
+.appBottomMenu.text-light .item.active .icon,
+.appBottomMenu.text-light .item.active .icon,
+.appBottomMenu.text-light .item.active strong {
+    color: #fff !important;
+}
+
+.appBottomMenu.bg-primary,
+.appBottomMenu.bg-secondary,
+.appBottomMenu.bg-success,
+.appBottomMenu.bg-warning,
+.appBottomMenu.bg-danger,
+.appBottomMenu.bg-info,
+.appBottomMenu.bg-light,
+.appBottomMenu.bg-dark {
+    border: 0;
+}
+
+.appBottomMenu.bg-primary .item:before,
+.appBottomMenu.bg-secondary .item:before,
+.appBottomMenu.bg-success .item:before,
+.appBottomMenu.bg-warning .item:before,
+.appBottomMenu.bg-danger .item:before,
+.appBottomMenu.bg-info .item:before,
+.appBottomMenu.bg-light .item:before,
+.appBottomMenu.bg-dark .item:before {
+    display: none;
+}
+
+body.dark-mode-active .appBottomMenu {
+    background: #0f1c2f;
+    border-top-color: #1b283b;
+}
+
+body.dark-mode-active .appBottomMenu .item .icon,
+body.dark-mode-active .appBottomMenu .item .icon,
+body.dark-mode-active .appBottomMenu .item strong {
+    color: #ffffff;
+}
+
+body.dark-mode-active .appBottomMenu .item:hover .icon,
+body.dark-mode-active .appBottomMenu .item:hover .icon,
+body.dark-mode-active .appBottomMenu .item:hover strong {
+    color: #ffffff;
+}
+
+body.dark-mode-active .appBottomMenu.bg-light .item .icon,
+body.dark-mode-active .appBottomMenu.bg-light .item .icon,
+body.dark-mode-active .appBottomMenu.bg-light .item strong {
+    color: #141515;
+}
+
+body.dark-mode-active .appBottomMenu.bg-light .item:hover .icon,
+body.dark-mode-active .appBottomMenu.bg-light .item:hover .icon,
+body.dark-mode-active .appBottomMenu.bg-light .item:hover strong {
+    color: #141515;
+}
+
+/* . Footer */
+/* .main-footer {
+    padding: 20px 30px 20px 230px;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 300;
+    color: #000000;
+    display: inline-block;
+    width: 100%;
+}
+.main-footer .footer-left {
+    float: left;
+}
+.main-footer .footer-right {
+    font-weight: 500;
+    margin-right: 20px;
+}
+@media (max-width: 590px) {
+    .main-footer {
+        text-align: center;
+        padding: 0;
+    }
+    .main-footer .footer-right {
+        margin-top: 10px;
+        font-weight: 600;
+        float: none;
+    }
+    .main-footer .footer-left {
+        float: none;
+    }
+} */
