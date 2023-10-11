@@ -19,7 +19,6 @@
         rel="stylesheet">
 
     {{-- style css --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     @stack('css')
@@ -28,24 +27,22 @@
 <body style="background-color:#ffff;">
     <div id="app">
         <div class="main-wrapper">
-            {{-- <div class="navbar-bg"></div> --}}
-            {{-- header --}}
-            {{-- @include('layouts.header') --}}
-            {{-- sidebar --}}
             @include('layouts.bottom-menu')
 
             <!-- Main Content -->
-            <div class="main-content" style="min-height:276px">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        {{-- Content Title --}}
-                        <h1 class="m-0">@yield('content-title')</h1>
+            <div class="main-content">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            {{-- Content Title --}}
+                            <h1 class="m-0">@yield('content-title')</h1>
+                        </div>
                     </div>
+                    <section class="content-section">
+                        {{-- Main Content Body --}}
+                        @yield('content')
+                    </section>
                 </div>
-                <section class="content-section">
-                    {{-- Main Content Body --}}
-                    @yield('content')
-                </section>
             </div>
         </div>
         {{-- <footer class="main-footer">
@@ -64,7 +61,7 @@
         crossorigin="anonymous"></script>
     <script src="{{ asset('plugins/bootstrap5/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('plugins/fontawesome-free/js/all.min.js') }}"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     @stack('customJS')

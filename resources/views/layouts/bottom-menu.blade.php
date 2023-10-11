@@ -87,7 +87,7 @@
             <strong>Calendar</strong>
         </div>
     </a>
-    <a href="#" class="item">
+    <a href="{{ route('presensi') }}" class="item">
         <div class="col">
             <div class="action-button large">
                 <i class="icon fa-solid fa-camera" style="color: #ffffff;"></i>

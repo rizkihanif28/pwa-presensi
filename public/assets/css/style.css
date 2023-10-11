@@ -121,11 +121,6 @@ body {
 
 /* 3. Alert */
 
-/* Alert Custom CSS */
-/* .alert-dismissible .close {
-    padding: 0.75rem 0.25rem;
-} */
-
 .alert-dismissible .close {
     color: #000000;
     padding-right: 0.5rem;
@@ -274,7 +269,7 @@ body.layout-3 .main-content {
     margin-bottom: 2px;
 } */
 
-/* appBottomMenu */
+/* 4. appBottomMenu */
 .appBottomMenu {
     min-height: 56px;
     position: fixed;
@@ -491,6 +486,224 @@ body.dark-mode-active .appBottomMenu.bg-light .item:hover .icon,
 body.dark-mode-active .appBottomMenu.bg-light .item:hover strong {
     color: #141515;
 }
+/* end appBottomMenu */
+
+/* 6. appHeader */
+.appHeader {
+    min-height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: env(safe-area-inset-top);
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #fff;
+    color: #141515;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.appHeader:before {
+    content: "";
+    height: env(safe-area-inset-top);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #1e74fd;
+}
+
+.appHeader.no-border {
+    border: 0;
+    box-shadow: none;
+}
+.appHeader.transparent {
+    background: transparent;
+    box-shadow: none;
+}
+.appHeader .left,
+.appHeader .right {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.appHeader .left {
+    left: 35px;
+    top: 0;
+    font-size: 20px;
+}
+
+.appHeader .pageTitle {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 10px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.appHeader .goBack {
+    color: #ffffff;
+}
+
+.appHeader .pageTitle .logo {
+    max-height: 18px;
+}
+
+.appHeader.text-light {
+    color: #fff;
+}
+
+.appHeader.text-light .headerButton,
+.appHeader.text-light .pageTitle {
+    color: #fff;
+}
+
+/* scrolled */
+::-webkit-scrollbar {
+    width: 0;
+}
+.appHeader.scrolled {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+    height: 0;
+    transition: 0.1s all;
+}
+.appHeader.scrolled .pageTitle {
+    opacity: 0;
+}
+
+.appHeader.scrolled.is-active {
+    background: #fff;
+    min-height: 56px;
+    border-bottom-color: #e1e1e1;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+.appHeader.scrolled.is-active .pageTitle {
+    opacity: 1;
+}
+.appHeader.scrolled.bg-primary {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+.appHeader.scrolled.bg-primary .headerButton {
+    color: #1e74fd;
+}
+
+.appHeader.scrolled.bg-primary.is-active {
+    background: #1e74fd !important;
+}
+.appHeader.scrolled.bg-primary.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-secondary {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-secondary .headerButton {
+    color: #6c7c94;
+}
+.appHeader.scrolled.bg-secondary.is-active {
+    background: #6c7c94 !important;
+}
+
+.appHeader.scrolled.bg-secondary.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-success {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-success .headerButton {
+    color: #34c759;
+}
+
+.appHeader.scrolled.bg-success.is-active {
+    background: #34c759 !important;
+}
+
+.appHeader.scrolled.bg-success.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-danger {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-danger .headerButton {
+    color: #ec4433;
+}
+
+.appHeader.scrolled.bg-danger.is-active {
+    background: #ec4433 !important;
+}
+
+.appHeader.scrolled.bg-danger.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-warning {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-warning .headerButton {
+    color: #fe9500;
+}
+
+.appHeader.scrolled.bg-warning.is-active {
+    background: #fe9500 !important;
+}
+
+.appHeader.scrolled.bg-warning.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-info {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-info .headerButton {
+    color: #592bca;
+}
+
+.appHeader.scrolled.bg-info.is-active {
+    background: #592bca !important;
+}
+
+.appHeader.scrolled.bg-info.is-active .headerButton {
+    color: #fff !important;
+}
+
+.appHeader.scrolled.bg-dark {
+    background: transparent !important;
+    border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-dark .headerButton {
+    color: #000;
+}
+
+.appHeader.scrolled.bg-dark.is-active {
+    background: #000 !important;
+}
+
+.appHeader.scrolled.bg-dark.is-active .headerButton {
+    color: #fff !important;
+}
+
+/* end appHeader */
 
 /* . Footer */
 /* .main-footer {
