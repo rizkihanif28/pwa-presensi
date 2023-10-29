@@ -33,9 +33,11 @@
         <div class="right"></div>
     </div>
     {{-- end app header --}}
-    <div class="col" style="margin-top: 70px">
-        <input type="text" id="location" style="margin-top: 30px">
-        <div class="webcam-presensi"></div>
+    <div class="row">
+        <div class="col" style="margin-top: 70px">
+            <input type="hidden" id="lokasi">
+            <div class="webcam-presensi"></div>
+        </div>
     </div>
     <div class="row mx-auto">
         <button id="takeAbsen" class="btn btn-primary btn-block">
@@ -65,16 +67,16 @@
 
         Webcam.attach('.webcam-presensi');
 
-        const lokasi = document.getElementById('location');
+        const lokasi = document.getElementById('lokasi');
         // check position
         if (navigator.geolocation) {
             // callback condition
-            navigator.geolocation.getCurrentPosition(solveCallback, errorCallback)
+            navigator.geolocation.getCurrentPosition(getPosition, error)
         }
 
-        function solveCallback(position) {
+        function getPosition(position) {
             // position location
-            location.value = position.coords.latitude + "," + position.coords.longitude;
+            lokasi.value = position.coords.latitude + "," + position.coords.longitude;
             // maps
             const map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 18);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -83,8 +85,9 @@
             }).addTo(map);
             // location marker
             const marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+            marker.bindPopup()
             // circle/m
-            const circle = L.circle([position.coords.latitude, position.coords.longitude], {
+            var circle = L.circle([position.coords.latitude, position.coords.longitude], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
@@ -92,8 +95,33 @@
             }).addTo(map);
         }
 
-        function errorCallback() {
+        function error() {
+            let msg = "";
+            console.log("error.message = " + error.message);
 
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    msg = "User does not want to display location.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    msg = "Can't determine user's location.";
+                    break;
+                case error.TIMEOUT:
+                    msg = "The request for geolocation info timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    msg = "An unknown error occurred.";
+                    break;
+            }
+            displayError(msg);
         }
+
+        // Take Absen Button
+        $("#takeAbsen").click(function(e) {
+            Webcam.snap(function(uri) {
+                image = uri;
+            });
+            alert(image);
+        });
     </script>
 @endpush
